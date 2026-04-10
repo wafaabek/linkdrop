@@ -2,7 +2,7 @@
 
 > Crée ta page de liens personnalisée en 30 secondes
 
-🔗 **Live demo** : https://linkdrop.vercel.app
+🔗 **Live demo** : [https://linkdrop.vercel.app](https://linkdrop-hb6v2d3au-wafaabeks-projects.vercel.app/)
 
 ![Dashboard](https://via.placeholder.com/800x400/7c3aed/ffffff?text=LinkDrop+Dashboard)
 
