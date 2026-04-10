@@ -1,16 +1,51 @@
-# React + Vite
+# LinkDrop — Gestionnaire de liens
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Crée ta page de liens personnalisée en 30 secondes
 
-Currently, two official plugins are available:
+🔗 **Live demo** : https://linkdrop.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Dashboard](https://via.placeholder.com/800x400/7c3aed/ffffff?text=LinkDrop+Dashboard)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Auth complète (JWT, register/login)
+- Ajoute, supprime et réordonne tes liens (drag & drop)
+- Page publique `/:username` partageable
+- Analytics de clics en temps réel
+- Design responsive violet
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Frontend | Backend | Base de données |
+|---|---|---|
+| React 19 | Node.js + Express | PostgreSQL |
+| Tailwind CSS | JWT Auth | Railway |
+| @dnd-kit | REST API | — |
+| Vercel | Railway | — |
+
+## Run locally
+
+```bash
+# Backend
+cd backend
+cp .env.example .env   # configure DATABASE_URL et JWT_SECRET
+npm install
+npm run dev
+
+# Frontend
+cd frontend
+npm install
+npm run dev
+```
+
+## API Endpoints
+
+| Méthode | Route | Description |
+|---|---|---|
+| POST | /api/auth/register | Créer un compte |
+| POST | /api/auth/login | Se connecter |
+| GET | /api/links | Mes liens (auth) |
+| POST | /api/links | Ajouter un lien (auth) |
+| DELETE | /api/links/:id | Supprimer (auth) |
+| GET | /api/links/profile/:username | Page publique |
+| POST | /api/links/:id/click | Tracker un clic |
